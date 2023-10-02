@@ -1,0 +1,277 @@
+<header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          aria-controls="jumbotronExample"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div
+          class="collapse navbar-collapse"
+          id="jumbotronExample"
+        >
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active float1">
+              <button class="btn btn-alert" (click)="logout()">Logout</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div *ngIf="showDatas" class="container">
+    <button routerLink="/list" class="btn btn-primary float-end mt-4">List</button>
+    <div class="col-md-12 mt-4">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="card">
+            <div class="col-md-6">
+              <label>Checkbox</label>
+              <input type="checkbox" formControlName="myCheckbox" />
+            </div>
+          
+            <div class="col-md-6 mt-4">
+              <label>
+                <input type="radio" value="option1" formControlName="myRadio" />
+                Option 1
+              </label>
+              <label>
+                <input type="radio" value="option2" formControlName="myRadio" />
+                Option 2
+              </label>
+            </div>
+          
+            <!-- <div class="col-md-6">
+              <label>
+                <input type="radio" value="true" formControlName="enable" />
+                Option 1
+              </label>
+              <label>
+                <input type="radio" value="false" formControlName="enable" />
+                Option 2
+              </label>
+            </div> -->
+          
+            
+              <div class="col-md-6 mt-4">
+                <label>Textarea</label>
+                <textarea
+                  class="form-control"
+                  formControlName="textarea"
+                  placeholder="Enter the description her"
+                >
+          Enter the description here</textarea
+                >
+              </div>
+          
+              <div class="col-md-6 mt-4">
+                <label for="website">Website:</label>
+                <select formControlName="website" class="form-control">
+                  <option disabled>Select Website</option>
+                  <option>Choose Website</option>
+                  <option *ngFor="let web of websiteList">{{ web }}</option>
+                </select>
+              </div>
+          
+              <div class="col-md-6 mt-4">
+                <label>Updoad Image</label>
+                <input
+                  type="file"
+                  (change)="onFileChange($event)"
+                  formControlName="image"
+                  class="form-control"
+                />
+              </div>
+          
+              <div class="col-md-6 mt-4">
+                <label>Multiselect dropdown</label>
+                <ng-multiselect-dropdown
+                  [placeholder]="'custom placeholder'"
+                  [settings]="dropdownSettings"
+                  [data]="dropdownList"
+                  formControlName="multiselect"
+                  (onSelect)="onItemSelect($event)"
+                  (onSelectAll)="onSelectAll($event)"
+                >
+                </ng-multiselect-dropdown>
+              </div>
+            </div>
+          </form>
+          <button (click)="onClick()" class="btn btn-primary">Next</button>
+    </div>
+</div>
+
+
+<!--  -->
+
+<div *ngIf="nextpage" class="container">
+  <div class="col-md-12">
+    <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+      <div
+        id="radius-shape-1"
+        class="position-absolute rounded-circle shadow-5-strong"
+      ></div>
+      <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+    </div>
+    <div class="card bg-glass">
+      <div class="card-body px-4 py-5 px-md-5">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+          <div class="col-md-6">
+            <label>First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your first Name"
+              formControlName="firstName"
+            />
+          </div>
+          <div class="col-md-6">
+            <label>Last Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your last name Name"
+              formControlName="lastName"
+            />
+          </div>
+          <div class="col-md-6">
+            <label>Phone Number</label>
+            <input
+              type="text"
+              (keypress)="validateNumber($event)"
+              maxlength="10"
+              class="form-control"
+              placeholder="Enter your phone number"
+              formControlName="phone"
+            />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label" 
+                >Email address</label
+              >
+                <input type="email"  class="form-control" formControlName="email" placeholder="Enter your Email" required="" />
+                <div *ngIf="submitted && f.email.errors" class="text-danger">
+                    <div *ngIf="f.email.errors?.['required']">Email is required</div>
+                    <div *ngIf="f.email.errors?.email">Email must be a valid email address</div>
+                </div>
+          </div>
+        </form>
+        <button (click)="onClick1()" class="btn btn-primary">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--  -->
+<div *ngIf="nextpage1" class="container">
+  <div class="col-md-12">
+    <div class="card bg-glass">
+      <div class="card-body px-4 py-5 px-md-5">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+          <div class="col-md-6">
+            <label>Full Name</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your Full Name"
+              formControlName="fullname"
+            />
+          </div>
+        </form>
+        <button (click)="onClick2()" class="btn btn-primary">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 
+ -->
+
+<div *ngIf="nextpage2" class="container">
+  <div class="col-md-12">
+    <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+      <div
+        id="radius-shape-1"
+        class="position-absolute rounded-circle shadow-5-strong"
+      ></div>
+      <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+    </div>
+    <div class="card bg-glass">
+      <div class="card-body px-4 py-5 px-md-5">
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+          <div class="col-md-6">
+            <label>Company</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your company Name"
+              formControlName="company"
+            />
+          </div>
+          <div class="col-md-6">
+            <label>Employement</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your employement Name"
+              formControlName="employement"
+            />
+          </div>
+          <div class="col-md-6">
+            <label>Start Date</label>
+            <input
+              type="date"
+              class="form-control"
+              placeholder="Enter your employement Name"
+              formControlName="startdate"
+            />
+          </div>
+          <div class="col-md-6">
+            <label>End Date</label>
+            <input
+              type="date"
+              class="form-control"
+              placeholder="Enter your employement Name"
+              formControlName="enddate"
+            />
+          </div>
+          <div class="col-md-6">
+            <label>Designation</label>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Enter your employement Name"
+              formControlName="designation"
+            />
+          </div>
+          <button type="submit"  class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

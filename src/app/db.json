@@ -1,0 +1,84 @@
+{
+  "data": [
+    {
+      "myCheckbox": true,
+      "myRadio": "option1",
+      "textarea": "Data",
+      "website": "HDTuto.com",
+      "multiselect": [
+        {
+          "item_id": 1,
+          "item_text": "Mumbai"
+        }
+      ],
+      "firstName": "suryansh",
+      "lastName": "sinha",
+      "phone": "8084499578",
+      "email": "suryanshsinhabth11@gmail.com",
+      "fullname": "Data Reciebed",
+      "company": "Ok",
+      "employement": "Surya",
+      "startdate": "2023-10-05",
+      "enddate": "2023-10-11",
+      "designation": "ASE",
+      "image": "C:\\fakepath\\BoardingPassPrint.pdf",
+      "id": 1
+    },
+    {
+      "myCheckbox": true,
+      "myRadio": "option1",
+      "textarea": "Ok",
+      "website": "Tutorialandexample.com",
+      "multiselect": [
+        {
+          "item_id": 3,
+          "item_text": "Pune"
+        }
+      ],
+      "firstName": "sATYAM",
+      "lastName": "sinha",
+      "phone": "7992389626",
+      "email": "suryanshsinhabth11@gmail.com",
+      "fullname": "sATYA",
+      "company": "Amaze",
+      "employement": "Codes",
+      "startdate": "2023-10-13",
+      "enddate": "2023-10-26",
+      "designation": "ASE",
+      "image": "C:\\fakepath\\400336551 (2).pdf",
+      "id": 2
+    },
+    {
+      "myCheckbox": true,
+      "myRadio": "option1",
+      "textarea": "Hello World",
+      "website": "Tutorialandexample.com",
+      "multiselect": [
+        {
+          "item_id": 3,
+          "item_text": "Pune"
+        },
+        {
+          "item_id": 2,
+          "item_text": "Bangaluru"
+        },
+        {
+          "item_id": 1,
+          "item_text": "Mumbai"
+        }
+      ],
+      "firstName": "suryansh",
+      "lastName": "sinha",
+      "phone": "8084499578",
+      "email": "suryanshsinhabth1@gmail.com",
+      "fullname": "Suryansh Sinha",
+      "company": "Amazecodes",
+      "employement": "SuryanshSinha",
+      "startdate": "2023-10-12",
+      "enddate": "2023-10-20",
+      "designation": "ASE",
+      "image": "C:\\fakepath\\400336551 (2).pdf",
+      "id": 3
+    }
+  ]
+}

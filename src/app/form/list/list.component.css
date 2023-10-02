@@ -1,0 +1,11 @@
+.point{
+    cursor: pointer;
+}
+mat-slide-toggle {
+    margin: 8px 0;
+    display: block;
+  }
+
+.float1{
+    margin-left: 80vw;
+}
